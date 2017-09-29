@@ -42,6 +42,8 @@ RUN curl -O http://mirrors.kernel.org/ubuntu/pool/universe/o/openjdk-8/openjdk-8
     apt-get -f install && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN echo y | cpan install File::Copy::Recursive
+
 # All builds will be done by user aosp
 COPY gitconfig /root/.gitconfig
 COPY ssh_config /root/.ssh/config
